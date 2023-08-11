@@ -29,14 +29,17 @@ void reversePart(int i, int j, vector<int>&a)
 
 int main()
 {
+	int n;
+	cin>>n;
+	
     vector<int>arr;
-    arr.push_back(1);
-    arr.push_back(3);
-    arr.push_back(5);
-    arr.push_back(10);
-    arr.push_back(5);
-    arr.push_back(8);
-
+	for(int i = 0; i<n; i++)
+		{
+			int j;
+			cin>>j;
+			arr.push_back(j);
+		}
+	
     display(arr);
     cout<<endl;
 
