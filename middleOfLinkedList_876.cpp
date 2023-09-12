@@ -26,7 +26,7 @@ ListNode* middleNode(ListNode* head) {
     }
 */
 
-//Slow faster technique
+//Slow fast pointer technique
 class Solution {
 public:
     ListNode* middleNode(ListNode* head) {
