@@ -8,9 +8,9 @@ struct ListNode {
     ListNode(int x) : val(x), next(nullptr) {}
 };
 
-class Solution {
-public:
-    ListNode* middleNode(ListNode* head) {
+// Brute force
+/*    
+ListNode* middleNode(ListNode* head) {
         int size = 0;
         ListNode* curr = head;
         while (curr != nullptr) {
@@ -23,6 +23,22 @@ public:
             temp = temp->next;
         }
         return temp;
+    }
+*/
+
+//Slow faster technique
+class Solution {
+public:
+    ListNode* middleNode(ListNode* head) {
+        ListNode * slow = head;
+        ListNode * fast = head;
+        while(fast != NULL && fast->next != NULL)
+        {
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+        return slow; 
+        // Return the middle node
     }
 };
 
