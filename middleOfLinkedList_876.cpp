@@ -8,9 +8,9 @@ struct ListNode {
     ListNode(int x) : val(x), next(nullptr) {}
 };
 
-// Brute force
-/*    
-ListNode* middleNode(ListNode* head) {
+class Solution {
+public:
+    ListNode* middleNode(ListNode* head) {
         int size = 0;
         ListNode* curr = head;
         while (curr != nullptr) {
@@ -24,22 +24,24 @@ ListNode* middleNode(ListNode* head) {
         }
         return temp;
     }
-*/
-
-//Slow fast pointer technique
-class Solution {
-public:
+    
+    /*
     ListNode* middleNode(ListNode* head) {
-        ListNode * slow = head;
-        ListNode * fast = head;
-        while(fast != NULL && fast->next != NULL)
-        {
+        ListNode* fast = head;
+        ListNode* slow = head;
+
+        while(fast->next && fast->next->next){
             slow = slow->next;
             fast = fast->next->next;
         }
-        return slow; 
-        // Return the middle node
+
+        if(fast->next){
+            return slow->next;
+        }
+
+        return slow;
     }
+    */
 };
 
 int main() {
